@@ -289,6 +289,29 @@ Architecture overview
 This diagram represents the documented architectural responsibilities. Exact function calls, component boundaries, and data transformations should be verified against the source code.
 ```
 
+### Project Structure
+
+```text
+Pragya/
+├── app/
+│   └── (app)/
+│       └── learn/
+│           └── [slug]/
+├── lib/
+│   ├── content.ts
+│   ├── learn.ts
+│   └── repository.ts
+├── supabase/
+│   ├── schema.sql
+│   └── rls-check.sql
+├── .env.example
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+The tree highlights important paths documented for the project. It is intentionally not an exhaustive file listing; consult the repository for the complete structure.
+
 
 schema.sql defines the database setup and policies.
 
