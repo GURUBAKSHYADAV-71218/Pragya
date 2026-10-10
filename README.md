@@ -1,6 +1,6 @@
-PRAGYA — Know Within.
+<font size="1">**PRAGYA — Within** </font>
 
-Understand the mind. Change the response.
+**Understand the mind. Change the response.**
 
 <p align="center">
   <strong>A space for self-awareness, reflection, and intentional growth.</strong>
@@ -11,7 +11,7 @@ Understand the mind. Change the response.
   <a href="https://github.com/GURUBAKSHYADAV-71218/Pragya">Source Code</a>
 </p>
 
-Table of Contents
+<font size="2">``Table of Contents``</font>
 
 About PRAGYA
 
@@ -52,7 +52,7 @@ Contributing
 License
 
 
-<font size="3">About PRAGYA</font>
+<font size="2">About PRAGYA</font>
 
 ``PRAGYA`` is a self-awareness and mind-training web application built around a simple idea: understanding our thoughts and responses is an important step toward making more intentional choices.
 
