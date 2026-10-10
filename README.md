@@ -169,3 +169,22 @@ The repository layer in lib/repository.ts provides an interface for local and Su
 This separates data-access operations from the rest of the application and gives the codebase a clearer place to manage storage behaviour.
 
 Feature availability depends on the application's configuration. Account-related functionality requires valid Supabase environment variables and appropriate database setup.
+
+
+How It Works
+
+At a high level, PRAGYA has three important parts:
+
+1. The application interface
+
+Next.js routes provide the pages and user-facing experiences for practice, reflection, and learning.
+
+2. Content and application logic
+
+Typed learning guides and application content are maintained in dedicated modules, rather than being mixed entirely into page components.
+
+3. The data-access layer
+
+The repository interface separates storage operations from the UI. Depending on the configured experience, data may be stored in the browser or associated with a Supabase account.
+
+Conceptual user flow
