@@ -51,6 +51,9 @@ Contributing
 
 License
 
+
+
+
 About PRAGYA
 
 PRAGYA is a self-awareness and mind-training web application built around a simple idea: understanding our thoughts and responses is an important step toward making more intentional choices.
@@ -64,3 +67,45 @@ The idea behind the name
 Prajñā (प्रज्ञा) is a Sanskrit word associated with wisdom, insight, discernment, and deeper understanding.
 
 The product takes inspiration from that meaning: developing greater awareness of what happens within us and approaching our responses more thoughtfully.
+
+At a glance
+
+Attribute
+
+Details
+
+Product
+
+PRAGYA
+
+Category
+
+Self-awareness and mind-training
+
+Live application
+
+pragya-within.vercel.app
+
+Repository
+
+GitHub
+
+Framework
+
+Next.js
+
+Language
+
+TypeScript
+
+Styling
+
+Tailwind CSS
+
+Authentication and database
+
+Supabase
+
+Guest experience
+
+Browser-local storage
