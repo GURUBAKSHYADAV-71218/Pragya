@@ -318,3 +318,31 @@ schema.sql defines the database setup and policies.
 rls-check.sql supports checks of Row Level Security behaviour.
 
 The policies must be reviewed and tested against the actual schema and application queries.
+
+### Important files
+
+| Path | Responsibility |
+| :--- | :--- |
+| `app/(app)/` | Shared application routes and experiences |
+| `app/(app)/learn/` | Learning board and guide routes |
+| `lib/content.ts` | Exercise and application content |
+| `lib/learn.ts` | Typed learning-guide content |
+| `lib/repository.ts` | Storage interface |
+| `supabase/schema.sql` | Database schema and policy setup |
+| `supabase/rls-check.sql` | SQL checks for data-access policies |
+| `.env.example` | Environment-variable template |
+
+---
+
+### Data Storage and Accounts
+
+PRAGYA distinguishes guest use from account-based use.
+
+| Area | Guest experience | Account experience |
+| :--- | :--- | :--- |
+| **Authentication** | Not required | Supabase Auth |
+| **Storage** | Current browser | Supabase-backed account data |
+| **Cross-device synchronization** | Not implied | Depends on implemented account-data flows |
+| **Guest-data import** | Not applicable | Available through Settings |
+| **Configuration** | No Supabase variables required for guest use | Supabase variables and database setup required |
+
