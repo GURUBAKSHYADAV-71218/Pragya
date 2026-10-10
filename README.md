@@ -50,3 +50,17 @@ Future Improvements
 Contributing
 
 License
+
+About PRAGYA
+
+PRAGYA is a self-awareness and mind-training web application built around a simple idea: understanding our thoughts and responses is an important step toward making more intentional choices.
+
+It brings structured practice, personal reflection, and learning experiences together in one application. Users can explore the available experiences as guests, while account-based functionality is available when Supabase is configured.
+
+PRAGYA aims to make self-reflection an activity people can return to—not just information they read once and forget.
+
+The idea behind the name
+
+Prajñā (प्रज्ञा) is a Sanskrit word associated with wisdom, insight, discernment, and deeper understanding.
+
+The product takes inspiration from that meaning: developing greater awareness of what happens within us and approaching our responses more thoughtfully.
