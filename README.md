@@ -188,18 +188,25 @@ Typed learning guides and application content are maintained in dedicated module
 The repository interface separates storage operations from the UI. Depending on the configured experience, data may be stored in the browser or associated with a Supabase account.
 
 Conceptual user flow
+
+
+```text
 Open PRAGYA
     |
     v
 Explore the application
     |
     +---------------------------+
+
     |                           |
     v                           v
 Continue as guest          Sign in / Sign up
+
     |                           |
     v                           v
 Browser-local data          Supabase Auth
                                 |
                                 v
                          Account-associated data
+```
+
