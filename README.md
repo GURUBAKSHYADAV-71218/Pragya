@@ -210,3 +210,18 @@ Browser-local data          Supabase Auth
                          Account-associated data
 ```
 
+### Technology Stack
+
+| Technology | Role in the project |
+| :--- | :--- |
+| **Next.js** | Application framework, routing, and production build |
+| **React** | Component-based interface |
+| **TypeScript** | Type checking and clearer data contracts |
+| **Tailwind CSS** | Utility-first styling |
+| **Supabase Auth** | Account authentication |
+| **Supabase database** | Account-associated data storage |
+| **Browser storage** | Guest-mode persistence |
+| **Node.js test runner** | Automated unit tests |
+| **Vercel** | Hosting and deployment |
+
+The framework and libraries provide the foundation; the application's own code defines the actual product behaviour.
