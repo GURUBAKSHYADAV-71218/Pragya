@@ -225,3 +225,37 @@ Browser-local data          Supabase Auth
 | **Vercel** | Hosting and deployment |
 
 The framework and libraries provide the foundation; the application's own code defines the actual product behaviour.
+
+Architecture
+
+PRAGYA separates routes, content, and storage responsibilities.
+
+1. Application routes
+
+The app/ directory contains the Next.js App Router structure.
+
+The app/(app)/ route group contains the shared application experience, including practice, reflection, and learning routes.
+
+2. Content modules
+
+lib/content.ts contains exercises, experiments, and wisdom-related content.
+
+lib/learn.ts contains typed learning-guide content.
+
+Keeping content in dedicated modules makes it easier to maintain and extend without placing all content directly inside UI components.
+
+3. Repository interface
+
+lib/repository.ts provides the storage interface used to separate data-access operations from the UI.
+
+This abstraction helps organize the local and Supabase-backed experiences. It does not, by itself, guarantee that every storage operation has identical behaviour or that data is synchronized between them.
+
+4. Supabase database and access policies
+
+The supabase/ directory contains database setup and security-check SQL files.
+
+schema.sql defines the database setup and policies.
+
+rls-check.sql supports checks of Row Level Security behaviour.
+
+The policies must be reviewed and tested against the actual schema and application queries.
