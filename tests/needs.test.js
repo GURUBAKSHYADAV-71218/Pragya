@@ -1,0 +1,11 @@
+const test = require("node:test"); const assert = require("node:assert");
+const { NEEDS, recommendFor, PRACTICES } = require("../.test-build/needs.js"); const { EXERCISES } = require("../.test-build/content.js");
+const valid = (h) => h === "/breathing" || h === "/silence" || EXERCISES.some((e) => h === `/exercises/${e.slug}`);
+test("every need maps to existing routes and distinct practices", () => { for (const n of NEEDS) { assert.ok(valid(n.primary.href), n.id); assert.ok(valid(n.alternative.href), n.id); assert.notStrictEqual(n.primary.id, n.alternative.id, n.id); assert.ok(n.why && n.what && n.notice, n.id); } });
+test("need ids are unique", () => assert.strictEqual(new Set(NEEDS.map((n) => n.id)).size, NEEDS.length));
+test("table from the brief", () => { const t = { anger: ["the-pause", "reaction-chain"], frustration: ["the-pause", "thought-labelling"], distraction: ["focus-reset", "attention-anchor"], repetitive: ["thought-labelling", "silence"], restless: ["comfortable-breathing", "body-scan"], overload: ["silence", "breathing-wave"], focus: ["attention-anchor", "focus-reset"], reactions: ["reaction-chain", "thought-labelling"], restart: ["focus-reset", "attention-anchor"], impatient: ["patience-practice", "the-pause"] };
+  for (const [id, [p, a]] of Object.entries(t)) { const r = recommendFor(id); assert.strictEqual(r.primary.id, p, id); assert.strictEqual(r.alternative.id, a, id); } });
+test("changing selection repeatedly never returns stale results", () => { const order = ["anger", "focus", "anger", "restart", "frustration", "anger"]; for (const id of order) assert.strictEqual(recommendFor(id).need.id, id); });
+test("unknown or empty selection falls back to null", () => { assert.strictEqual(recommendFor("nope"), null); assert.strictEqual(recommendFor(null), null); });
+test("repeated flag uses only the most recent session", () => { assert.strictEqual(recommendFor("anger", ["the-pause"]).repeated, true); assert.strictEqual(recommendFor("anger", ["silence", "the-pause"]).repeated, false); assert.strictEqual(recommendFor("anger", []).repeated, false); });
+test("different needs can share a primary but explanations differ", () => { assert.strictEqual(recommendFor("anger").primary.id, recommendFor("frustration").primary.id); assert.notStrictEqual(recommendFor("anger").need.why, recommendFor("frustration").need.why); });

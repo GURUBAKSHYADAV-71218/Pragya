@@ -1,0 +1,6 @@
+import UpdatePasswordForm from "@/components/layout/UpdatePasswordForm";
+import Scene from "@/components/environment/Scene";
+export const metadata = { title: "New password — PRAGYA" };
+export default function Page() {
+  return <main className="relative grid min-h-screen place-items-center overflow-hidden px-5"><div aria-hidden className="absolute inset-x-0 bottom-0 h-72"><Scene /></div><div className="relative z-10 w-full max-w-sm"><UpdatePasswordForm /></div></main>;
+}

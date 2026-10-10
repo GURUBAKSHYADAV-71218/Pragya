@@ -1,0 +1,5 @@
+const test = require("node:test"); const assert = require("node:assert"); const { parseSupabaseEnv } = require("../.test-build/envConfig.js");
+test("missing values are reported by name only", () => { const r = parseSupabaseEnv(undefined, undefined); assert.strictEqual(r.configured, false); assert.deepStrictEqual(r.missing, ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"]); });
+test("valid pair is configured, quotes and spaces are tolerated", () => { const r = parseSupabaseEnv(' "https://abc.supabase.co" ', "  key123 "); assert.strictEqual(r.configured, true); assert.strictEqual(r.url, "https://abc.supabase.co"); assert.strictEqual(r.key, "key123"); });
+test("a non-URL value is rejected", () => { const r = parseSupabaseEnv("abc.supabase.co", "k"); assert.strictEqual(r.configured, false); assert.ok(r.missing[0].includes("https://")); });
+test("only one variable set", () => { assert.deepStrictEqual(parseSupabaseEnv("https://a.co", "").missing, ["NEXT_PUBLIC_SUPABASE_ANON_KEY"]); });
