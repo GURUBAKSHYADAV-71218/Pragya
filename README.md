@@ -346,3 +346,16 @@ PRAGYA distinguishes guest use from account-based use.
 | **Guest-data import** | Not applicable | Available through Settings |
 | **Configuration** | No Supabase variables required for guest use | Supabase variables and database setup required |
 
+Guest data
+
+Guest data is stored in the current browser. Clearing browser storage, changing browsers, or using another device can affect its availability.
+
+Guest data is not automatically uploaded or merged into an account.
+
+Account data
+
+Account functionality requires these environment variables:
+
+NEXT_PUBLIC_SUPABASE_URL
+
+NEXT_PUBLIC_SUPABASE_ANON_KEY
