@@ -254,6 +254,42 @@ This abstraction helps organize the local and Supabase-backed experiences. It do
 
 The supabase/ directory contains database setup and security-check SQL files.
 
+```text
+Architecture overview
+
+                 PRAGYA
+                    |
+          +---------+---------+
+
+          |                   |
+          v                   v
+    Next.js routes       Shared UI
+
+          |                   |
+          +---------+---------+
+                    |
+                    v
+         Content and app logic
+
+          |                   |
+          v                   v
+     lib/content.ts      lib/learn.ts
+                    |
+                    v
+           Repository interface
+          lib/repository.ts
+                    |
+             +------+------+
+
+             |             |
+             v             v
+       Local storage   Supabase-backed
+       guest data      account data
+
+This diagram represents the documented architectural responsibilities. Exact function calls, component boundaries, and data transformations should be verified against the source code.
+```
+
+
 schema.sql defines the database setup and policies.
 
 rls-check.sql supports checks of Row Level Security behaviour.
